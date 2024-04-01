@@ -312,7 +312,7 @@
                     <field
                         name="report_instance_id"
                         invisible="1"
-                        required="id == not False"
+                        required="1"
                     />
                     <field name="report_id" invisible="1" />
                     <field name="id" invisible="1" />
