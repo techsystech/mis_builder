@@ -63,7 +63,7 @@
                         <field name="font_weight_inherit" />
                         <field
                             name="font_weight"
-                            invisible="font_weight_inher == True"
+                            invisible="font_weight_inherit == True"
                         />
                         <field name="font_size_inherit" />
                         <field
