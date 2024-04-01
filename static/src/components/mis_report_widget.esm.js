@@ -99,7 +99,7 @@ export class MisReportWidget extends Component {
          */
         var context = this.props.record.context;
         if (context.active_model === "mis.report.instance") {
-            return context.active_id;
+            return context.id;
         }
     }
 
