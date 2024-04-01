@@ -23,12 +23,12 @@ class AddMisReportInstanceDashboard(models.TransientModel):
     @api.model
     def default_get(self, fields_list):
         res = {}
-        if self.env.context.get("active_id", False):
+        if self.env.context.get("id", False):
             res = super().default_get(fields_list)
             # get report instance name
             res["name"] = (
                 self.env["mis.report.instance"]
-                .browse(self.env.context["active_id"])
+                .browse(self.env.context["id"])
                 .name
             )
         return res
@@ -36,8 +36,8 @@ class AddMisReportInstanceDashboard(models.TransientModel):
     def action_add_to_dashboard(self):
         active_model = self.env.context.get("active_model")
         assert active_model == "mis.report.instance"
-        active_id = self.env.context.get("active_id")
-        assert active_id
+        id = self.env.context.get("id")
+        assert id
         # create the act_window corresponding to this report
         self.env.ref("mis_builder.mis_report_instance_result_view_form")
         view = self.env.ref("mis_builder.mis_report_instance_result_view_form")
@@ -47,9 +47,9 @@ class AddMisReportInstanceDashboard(models.TransientModel):
             .create(
                 {
                     "name": "mis.report.instance.result.view.action.%d"
-                    % self.env.context["active_id"],
+                    % self.env.context["id"],
                     "res_model": active_model,
-                    "res_id": active_id,
+                    "res_id": id,
                     "target": "current",
                     "view_mode": "form",
                     "view_id": view.id,
