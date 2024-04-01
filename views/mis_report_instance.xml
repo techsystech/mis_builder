@@ -357,7 +357,7 @@
                         />
                         <field
                             name="source_cmpcol_from_id"
-                            invisible="source == not 'cmpcol'"
+                            invisible="source != 'cmpcol'"
                             required="source == 'cmpcol'"
                             domain="[('id', 'in', allowed_cmpcol_ids)]"
                             options="{'no_create': True, 'no_open': True}"
@@ -381,7 +381,7 @@
                             <field name="is_ytd" />
                             <field
                                 name="date_range_type_id"
-                                invisible="type == not 'date_range'"
+                                invisible="type != 'date_range'"
                                 required="type == 'date_range', mode == 'relative'"
                             />
                             <field name="offset" />
