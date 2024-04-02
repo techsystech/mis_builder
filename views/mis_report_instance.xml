@@ -77,13 +77,13 @@
                             string="Export"
                             icon="fa-download"
                         />
-                        <button
+                        <!-- <button
                             type="action"
                             name="%(mis_report_instance_add_to_dashboard_action)d"
                             string="Add to dashboard"
                             icon="fa-plus"
                             invisible="temporary in True"
-                        />
+                        /> -->
                         <button
                             type="object"
                             name="save_report"
@@ -113,17 +113,19 @@
                         <group>
                             <group
                                 name="simple_mode"
-                                invisible="comparison_mode in True"
+                                invisible="comparison_mode == False"
                                 colspan="4"
                             >
                                 <field name="date_range_id" />
                                 <field
                                     name="date_from"
                                     required="comparison_mode == False"
+                                    invisible="comparison_mode == False"
                                 />
                                 <field
                                     name="date_to"
                                     required="comparison_mode == False"
+                                    invisible="comparison_mode == False"
                                 />
                             </group>
                         </group>
@@ -131,7 +133,7 @@
                     <notebook>
                         <page
                             string="Columns"
-                            invisible="comparison_mode in False"
+                            invisible="comparison_mode == False"
                         >
                             <group>
                                 <group>
@@ -154,7 +156,7 @@
                                         <field name="source_aml_model_id" />
                                         <field name="date_from" />
                                         <field name="date_to" />
-                                        <field name="valid" invisible="1" />
+                                        <field name="valid" invisible="True" />
                                     </tree>
                                 </field>
                             </group>
