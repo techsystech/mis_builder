@@ -15,7 +15,7 @@
                     <field
                         name="id"
                         widget="mis_report_widget"
-                        nolabel="True"
+                        nolabel="1"
                         style="width:100%"
                     />
                 </sheet>
@@ -57,7 +57,7 @@
         <field name="arch" type="xml">
             <form string="MIS Report Instance">
                 <sheet>
-                    <field name="temporary" invisible="True" />
+                    <field name="temporary" invisible="1" />
                     <div class="oe_right oe_button_box" name="buttons">
                         <button
                             type="object"
@@ -183,7 +183,7 @@
                                     groups="base.group_multi_company"
                                     widget="many2many_tags"
                                 />
-                                <field name="source_aml_model_name" invisible="True" />
+                                <field name="source_aml_model_name" invisible="1" />
                                 <field
                                     name="analytic_domain"
                                     widget="domain"
@@ -241,16 +241,16 @@
         <field name="inherit_id" ref="mis_builder.mis_report_instance_view_form" />
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-<!--             <field name="name" position="attributes">
+            <field name="name" position="attributes">
                 <attribute name="readonly">1</attribute>
-            </field> -->
-<!--             <label for="name" position="replace" /> -->
-<!--             <field name="report_id" position="attributes">
+            </field>
+            <label for="name" position="replace" />
+            <field name="report_id" position="attributes">
                 <attribute name="invisible">1</attribute>
-            </field> -->
-<!--             <div name="buttons" position="attributes">
+            </field>
+            <div name="buttons" position="attributes">
                 <attribute name="invisible">1</attribute>
-            </div> -->
+            </div>
             <sheet position="after">
                 <footer>
                     <button
@@ -308,14 +308,14 @@
                         widget="many2many_tags"
                         options="{'no_create': True}"
                     />
-                    <field name="valid" invisible="True" />
+                    <field name="valid" invisible="1" />
                     <field
                         name="report_instance_id"
-                        invisible="True"
-                        required="True"
+                        invisible="1"
+                        required="1"
                     />
-                    <field name="report_id" invisible="True" />
-                    <field name="id" invisible="True" />
+                    <field name="report_id" invisible="1" />
+                    <field name="id" invisible="1" />
                 </group>
                 <group string="Source" col="4">
                     <group colspan="2" name="source">
@@ -327,7 +327,7 @@
                             invisible="source != 'actuals_alt'"
                             required="source == 'actuals_alt'"
                         />
-                        <field name="source_aml_model_name" invisible="True" />
+                        <field name="source_aml_model_name" invisible="1" />
                         <field
                             name="source_sumcol_ids"
                             invisible="source != 'sumcol'"
@@ -347,7 +347,7 @@
                             name="source_sumcol_accdet"
                             invisible="source != 'sumcol'"
                         />
-                        <field name="allowed_cmpcol_ids" invisible="True" />
+                        <field name="allowed_cmpcol_ids" invisible="1" />
                         <field
                             name="source_cmpcol_to_id"
                             invisible="source != 'cmpcol'"
